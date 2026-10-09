@@ -1,0 +1,64 @@
+{
+  "name": "StdFeedback",
+  "description": "High-performance Telegram Feedback, Support & Contact Bot built in Go with MongoDB persistence, anonymous ticketing, clone support, and real-time admin replies.",
+  "repository": "https://github.com/StdBots/StdFeedback",
+  "logo": "https://graph.org/file/00ea4effe5d2dfbb8d5be.jpg",
+  "keywords": [
+    "telegram",
+    "bot",
+    "golang",
+    "feedback",
+    "support",
+    "ticketing",
+    "mongodb",
+    "stdbots",
+    "std-deepanshu"
+  ],
+  "stack": "container",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Telegram Numeric User ID of the Bot Owner",
+      "value": "7394590844",
+      "required": true
+    },
+    "MONGO_URI": {
+      "description": "MongoDB Connection String (MongoDB Atlas or standalone)",
+      "required": true
+    },
+    "DB_NAME": {
+      "description": "Database Name",
+      "value": "stdfeedback",
+      "required": false
+    },
+    "LOG_CHANNEL": {
+      "description": "Telegram Channel ID for audit and feedback logs (e.g. -1001234567890)",
+      "value": "0",
+      "required": false
+    },
+    "AUTH_USERS": {
+      "description": "Space-separated User IDs of authorized admins/sudo users",
+      "value": "",
+      "required": false
+    },
+    "START_TEXT": {
+      "description": "Custom start text",
+      "value": "Send your feedback, suggestions or queries here!",
+      "required": false
+    },
+    "ENV": {
+      "description": "Runtime Environment",
+      "value": "production",
+      "required": false
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  bot:
+    build: .
+    container_name: feedvackbot
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    networks:
+      - botnet
+
+  mongo:
+    image: mongo:7
+    container_name: feedvackbot-mongo
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - botnet
+
+volumes:
+  mongo_data:
+
+networks:
+  botnet:
+    driver: bridge

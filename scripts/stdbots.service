@@ -1,0 +1,15 @@
+[Unit]
+Description=StdFeedback Telegram Service
+After=network.target mongodb.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/stdfeedback
+ExecStart=/opt/stdfeedback/bin/bot
+Restart=always
+RestartSec=5
+EnvironmentFile=/opt/stdfeedback/.env
+
+[Install]
+WantedBy=multi-user.target
