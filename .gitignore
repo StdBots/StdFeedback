@@ -1,0 +1,18 @@
+﻿# Binaries
+*.exe
+*.exe~
+bin/
+dist/
+feedvackbot
+
+# Environment
+.env
+*.local
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
